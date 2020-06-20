@@ -1,0 +1,7 @@
+flask
+flask-sqlalchemy
+mysqlclient
+flask-script
+flask_debugtoolbar
+SQLAlchemy-serializer
+py_eureka_client
