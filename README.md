@@ -63,8 +63,8 @@ flask-sqlacodegen "mysql://root:123456@127.0.0.1/movie_cat" --tables user --outf
 
 ```bash
 
- Run with "python manager.py runjob -m movie" start the crawler
- Run with "python manager.py runserver" start the web
+ Run with "python3 manager.py runjob -m movie" start the crawler
+ Run with "python3 manager.py runserver" start the web
 ```
 
 

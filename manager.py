@@ -8,8 +8,8 @@ from eureka import setEureka
 """
  register the command and start the program with the command;
  
- Run with "python manager.py runjob -m movie" start the crawler
- Run with "python manager.py runserver" start the web
+ Run with "python3 manager.py runjob -m movie" start the crawler
+ Run with "python3 manager.py runserver" start the web
  
 """
 manager.add_command("runserver", Server(host="0.0.0.0",port= 9004, use_debugger=True, use_reloader=True))
