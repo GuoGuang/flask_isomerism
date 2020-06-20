@@ -31,6 +31,31 @@
 git clone https://github.com/GuoGuang/spider.git
 ```
 
+## Table structure
+``` 
+CREATE TABLE `movie`  (
+  `id` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '电影名称',
+  `desc` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '电影描述',
+  `classify` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '类别',
+  `actor` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '主演',
+  `director` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '导演',
+  `cover_pic` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '封面图',
+  `pics` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '图片地址',
+  `magnet_url` varchar(5000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '磁力下载地址',
+  `online _url` varchar(5000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '在线播放地址',
+  `pub_date` bigint(20) NOT NULL COMMENT '发布日期',
+  `rating` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '评分',
+  `source` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '来源',
+  `visits` int(11) NOT NULL DEFAULT 0 COMMENT '阅读数',
+  `is_recommend` int(11) NOT NULL DEFAULT 0 COMMENT '是否推荐，0不推荐，1推荐',
+  `update_at` bigint(20) NOT NULL,
+  `create_at` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_pu_date`(`pub_date`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+```
+
 ## Usage
 
 ```bash
