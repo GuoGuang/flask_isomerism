@@ -54,9 +54,33 @@ CREATE TABLE `movie`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_pu_date`(`pub_date`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+// If you create a new entity use auto generate model
+flask-sqlacodegen "mysql://root:123456@127.0.0.1/movie_cat" --tables user --outfile "common/models/user.py"  --flask
 ```
 
 ## Usage
+
+```bash
+
+ Run with "python manager.py runjob -m movie" start the crawler
+ Run with "python manager.py runserver" start the web
+```
+
+
+## Job task
+Use Linux Crontab implementation
+```bash
+// 编辑文件
+crontab -e 
+
+# 编写脚本
+* */1 * * * { export ops_config=local && python3 /Yourdirectory/manager.py runjob -m movie }
+
+```
+
+
+
 
 ```bash
 
