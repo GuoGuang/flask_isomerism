@@ -62,9 +62,11 @@ flask-sqlacodegen "mysql://root:123456@127.0.0.1/movie_cat" --tables user --outf
 ## Usage
 
 ```bash
-
- Run with "python3 manager.py runjob -m movie" start the crawler
- Run with "python3 manager.py runserver" start the web
+# 使用以下命令启动爬虫
+ python manager.py runjob -m movie 
+ 
+# 使用以下命令启动Flask web
+python manager.py runserver
 ```
 
 
@@ -79,16 +81,6 @@ crontab -e
 
 ```
 
-
-
-
-```bash
-# 使用以下命令启动爬虫
- python manager.py runjob -m movie 
- 
-# 使用以下命令启动Flask web
-python manager.py runserver
-```
 
 ## Author
 
