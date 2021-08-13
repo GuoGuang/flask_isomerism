@@ -74,7 +74,7 @@ Use Linux Crontab implementation
 // 编辑文件
 crontab -e 
 
-# 编写脚本
+# 编写脚本 自动执行爬虫
 * */1 * * * { export ops_config=local && python3 /Yourdirectory/manager.py runjob -m movie }
 
 ```
@@ -83,9 +83,11 @@ crontab -e
 
 
 ```bash
-
- Run with "python manager.py runjob -m movie" start the crawler
- Run with "python manager.py runserver" start the web
+# 使用以下命令启动爬虫
+ python manager.py runjob -m movie 
+ 
+# 使用以下命令启动Flask web
+python manager.py runserver
 ```
 
 ## Author
